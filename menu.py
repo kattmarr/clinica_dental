@@ -1,16 +1,47 @@
-import customtkinter as ctk
+app = ctk.CTk()
+app.title("Clínica Dental - Sistema")
+app.geometry("700x800")
+app.minsize(650, 750)
+ctk.set_appearance_mode("light")
+ctk.set_default_color_theme("green")
+# logo
+logo_img = ctk.CTkImage(
+    light_image=Image.open("logo.png.jpeg"),
+    size=(280, 120)
+)
 
-def abrir_menu():
-    app = ctk.CTk()
-    app.title("OdontoSys - Menú principal")
-    app.geometry("400x350")
-    ctk.set_appearance_mode("light")
+logo = ctk.CTkLabel(app, image=logo_img, text="")
+logo.pack(pady=(20, 10))
 
-    ctk.CTkLabel(app, text="Sistema de Ventas Odontológicas", font=("Arial", 18, "bold")).pack(pady=20)
+titulo = ctk.CTkLabel(
+    app,
+    text="Sistema de Gestión Odontológica",
+    font=("Segoe UI", 20, "bold"),
+    text_color="#1C7CB8"
+)
+titulo.pack(pady=(0, 25))
 
-    ctk.CTkButton(app, text="Pacientes", width=200).pack(pady=10)
-    ctk.CTkButton(app, text="Ventas", width=200).pack(pady=10)
-    ctk.CTkButton(app, text="Inventario", width=200).pack(pady=10)
-    ctk.CTkButton(app, text="Salir", width=200, command=app.destroy).pack(pady=20)
+def boton_principal(texto, comando):
+    return ctk.CTkButton(
+        app,
+        text=texto,
+        width=320,
+        height=45,
+        corner_radius=12,
+        font=("Segoe UI", 15, "bold"),
+        fg_color="#2EA8E5",
+        hover_color="#1C7CB8",
+        command=comando
+    )
+boton_principal("Pacientes", ventana_pacientes).pack(pady=8)
+boton_principal("Odontólogos", ventana_odontologos).pack(pady=8)
+boton_principal("Turnos", ventana_turnos).pack(pady=8)
+boton_principal("Tratamientos", ventana_tratamientos).pack(pady=8)
+boton_principal("Pagos", ventana_pagos).pack(pady=8)
+boton_principal("Ficha clínica", ventana_ficha_clinica).pack(pady=8)
+boton_principal("Presupuestos", ventana_presupuestos).pack(pady=8)
+boton_principal(
+    "Reporte General (Excel)",
+    reporte_general_excel
+).pack(pady=8)
 
-    app.mainloop()
