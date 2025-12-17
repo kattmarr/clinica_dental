@@ -1,64 +1,83 @@
 🦷 Sistema de Gestión Clínica Dental
 📘 Descripción del Proyecto
-El Sistema de Gestión Clínica Dental es una aplicación de escritorio desarrollada en Python utilizando la librería CustomTkinter para la interfaz gráfica y MySQL como base de datos.
-Está diseñado para facilitar la administración de pacientes, odontólogos, tratamientos, turnos y pagos dentro de una clínica odontológica.
-Este sistema permite almacenar, consultar y organizar la información clínica y administrativa de manera rápida, segura y moderna.
+
+El Sistema de Gestión Clínica Dental es una aplicación de escritorio desarrollada en Python, utilizando la librería CustomTkinter para la interfaz gráfica y MySQL como sistema gestor de base de datos.
+El sistema está orientado a facilitar la administración clínica y administrativa de una clínica odontológica, permitiendo gestionar pacientes, odontólogos, turnos, tratamientos, pagos y fichas clínicas de manera ordenada, segura y eficiente.
+La aplicación ofrece una interfaz moderna e intuitiva, pensada para un uso sencillo por parte del personal de la clínica.
 
 🎯 Objetivos
-Diseñar una aplicación de escritorio funcional para la gestión de una clínica dental.
-Implementar una base de datos relacional que garantice integridad y seguridad.
-Permitir registrar, modificar, eliminar y consultar datos de pacientes, odontólogos, tratamientos y pagos.
-Mejorar la organización de la información mediante una interfaz intuitiva.
+
+Diseñar una aplicación de escritorio funcional para la gestión integral de una clínica dental.
+Implementar una base de datos relacional que garantice la integridad y consistencia de la información.
+Permitir el registro, consulta y actualización de datos clínicos y administrativos.
+Facilitar la organización de pacientes, turnos, tratamientos y pagos mediante una interfaz amigable.
+Aplicar buenas prácticas de programación y modularización del código.
 
 🧩 Tecnologías Utilizadas
+
 Lenguaje: Python
 Interfaz gráfica: CustomTkinter
 Base de datos: MySQL
 Conector: mysql-connector-python
+Calendario: tkcalendar
 IDE recomendado: Visual Studio Code
 
 🗄️ Estructura de la Base de Datos
+
 Base de datos: clinica_dental
 Tablas principales:
-paciente: información personal de los pacientes.
-odontologo: datos de los doctores.
-turno: citas con paciente, odontólogo, fecha y motivo.
-tratamiento y tratamiento_realizado: tratamientos registrados y aplicados.
-pago: pagos realizados por los pacientes.
-Cada tabla cuenta con claves primarias, foráneas y restricciones para mantener la integridad de los datos.
+paciente: datos personales del paciente.
+odontologo: información de los profesionales.
+turno: citas médicas con fecha, hora, paciente y odontólogo.
+tratamiento: catálogo de tratamientos odontológicos.
+tratamiento_realizado: tratamientos aplicados a pacientes.
+historia_medica: ficha clínica del paciente.
+pago: registro de pagos asociados a pacientes y turnos.
+presupuesto / presupuesto_detalle: presupuestos de tratamientos.
+La base de datos utiliza claves primarias y foráneas para mantener la integridad referencial entre las tablas.
 
 💻 Funcionalidades Principales
-Gestión de pacientes: registrar, listar y editar datos.
-Gestión de odontólogos: registrar especialistas y sus datos de contacto.
-Gestión de turnos: asignar citas, registrar fecha, hora y motivo.
-Gestión de tratamientos: registrar servicios odontológicos y precios.
-Gestión de pagos: registrar y consultar los métodos de pago y montos.
-Interfaz moderna: con diseño intuitivo, botones redondeados y colores suaves.
+
+Gestión de pacientes: registro, visualización y edición de datos.
+Gestión de odontólogos: administración de profesionales y especialidades.
+Gestión de turnos: asignación de citas con fecha, hora y motivo.
+Gestión de tratamientos: registro de tratamientos y precios.
+Ficha clínica: historial médico del paciente (enfermedades, alergias, medicación).
+Gestión de pagos: registro de pagos asociados a pacientes y turnos.
+Historial del paciente: visualización de turnos, tratamientos, pagos y presupuestos.
+Interfaz moderna: diseño limpio, botones personalizados y colores institucionales.
 
 ⚙️ Requisitos del Sistema
+
 Python 3.10 o superior
 MySQL Server 8.x
 Librerías necesarias:
-pip install customtkinter mysql-connector-python
+pip install customtkinter mysql-connector-python tkcalendar
 
 🚀 Ejecución del Sistema
+
 Crear la base de datos ejecutando el script SQL clinica_dental.sql en MySQL Workbench.
-Configurar la conexión en el archivo principal:
+Configurar la conexión a la base de datos en el archivo principal:
+
 host="localhost"
 user="root"
 password=""
 database="clinica_dental"
-Ejecutar el programa:
+
+Ejecutar el sistema:
 python clinica_dental.py
 
+📊 Reportes
 
-🧠 Posibles Mejoras Futuras
-Módulo de login con niveles de acceso (administrador / asistente).
-Generación de reportes PDF y exportación a Excel.
-Función de respaldo automático de la base de datos.
-Sistema de notificaciones o recordatorios de turnos.
+El sistema permite la generación de reportes en Excel, centralizando en una sola hoja información de:
+Pacientes
+Turnos
+Pagos
+Esto facilita el análisis administrativo y la presentación de información.
 
 👩‍💻 Autor
+
 Kathia Martínez
-Estudiante de Ingeniería Informática – Universidad del Norte, Sede Caacupé
+Estudiante de Ingeniería Informática
+Universidad del Norte – Sede Caacupé
 📍 Paraguay
